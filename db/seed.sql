@@ -5,7 +5,7 @@ INSERT INTO departments (name, description) VALUES
 ('Department of Process Engineering', 'Specializes in chemical engineering, pharmaceutical processes, environmental engineering, and polymers.'),
 ('Department of Electrical and Electronic Engineering', 'Provides training in automation, telecommunications, power systems, and embedded electronics.');
 
-INSERT INTO announcements (title, the_content, pubmication_date) VALUES
+INSERT INTO announcements (title, the_content, publication_time) VALUES
 ('2026/2027 Academic Year Registration', 'Pedagogical and administrative registration for Licence and Master students at the Faculty of Sciences is now open via the Progres platform.', '2026-09-10'),
 ('First Semester Exam Schedule', 'The official timetable for the first semester exams has been published. Students are required to check their assigned amphitheaters and bring their student ID cards.', '2026-11-18'),
 ('Call for PFE Graduation Project Proposals', 'Final-year L3 and M2 students must submit their graduation project themes signed by their academic supervisors before the end of the month.', '2026-11-12'),
