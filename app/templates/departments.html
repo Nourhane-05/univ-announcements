@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - NBM Academia</title>
+</head>
+<body>
+    <h1>Departments</h1>
+
+    {% for r in rows %}
+    <div>
+        <h2>{{ r[0] }}</h2>
+        <p>{{ r[1] }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
