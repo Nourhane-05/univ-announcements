@@ -11,5 +11,4 @@ INSERT INTO announcements (title, the_content, publication_time) VALUES
 ('Call for PFE Graduation Project Proposals', 'Final-year L3 and M2 students must submit their graduation project themes signed by their academic supervisors before the end of the month.', '2026-11-12'),
 ('Scientific Workshop on Artificial Intelligence', 'The Department of Computer Science is hosting a hands-on seminar on distributed AI and big data next Tuesday at the main auditorium.', '2026-11-15');
 
-INSERT INTO admins (username, password_hash) VALUES
-    ('admin', 'scrypt:32768:8:1$gGgXaQO6YsIRnC6J$6a1b27b504db64bcfca7d8f41d6cad5da736afa3322a28d7458e66fab000016455cdc7a5e134a6b008d9b7656eaac9e993f645d4bfbc8f90c25f28c6ffe352f6');
+--the admin user is created manually, so no credentials are stored in this file for security reasons.
