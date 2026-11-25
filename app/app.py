@@ -11,6 +11,17 @@ def get_db_connection():
 def health():
     return "OK"
 
+
+@app.route("/")
+def home():
+    conn=get_db_connection()
+    cur=conn.cursor()
+    cur.execute("SELECT title, the_content, publication_time FROM announcements ORDER BY publication_time DESC LIMIT 3")
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template("home.html", rows=rows)
+
 @app.route("/departments")
 def departments():
     conn=get_db_connection()

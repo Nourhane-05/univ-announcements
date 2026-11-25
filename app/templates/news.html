@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Announcements - NBM Academia</title>
-</head>
-<body>
-    <h1>Announcements</h1>
+{% extends "base.html" %}
 
-    {% for r in rows %}
-    <div>
-        <h2>{{ r[0] }}</h2>
-        <p>{{ r[2].strftime("%d %B %Y") }}</p> 
-        <p>{{ r[1] }}</p>
-    </div>
-    {% endfor %}
-</body>
-</html>
+{% block title %}Announcements - NBM Academia{% endblock %}
+
+{% block content %}
+<h2 class="page-title">Announcements</h2>
+<p class="lead">All the latest news from the university.</p>
+
+<div class="list">
+  {% for a in rows %}
+  <div class="card">
+    <span class="date">{{ a[2].strftime('%d %B %Y') }}</span>
+    <h3>{{ a[0] }}</h3>
+    <p>{{ a[1] }}</p>
+  </div>
+  {% else %}
+  <p>No announcements yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

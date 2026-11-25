@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departments - NBM Academia</title>
-</head>
-<body>
-    <h1>Departments</h1>
+{% extends "base.html" %}
 
-    {% for r in rows %}
-    <div>
-        <h2>{{ r[0] }}</h2>
-        <p>{{ r[1] }}</p>
-    </div>
-    {% endfor %}
-</body>
-</html>
+{% block title %}Departments - NBM Academia{% endblock %}
+
+{% block content %}
+<h2 class="page-title">Our Departments</h2>
+<p class="lead">The academic departments of NBM Academia.</p>
+
+<div class="grid">
+  {% for d in rows %}
+  <div class="card">
+    <h3>{{ d[0] }}</h3>
+    <p>{{ d[1] }}</p>
+  </div>
+  {% else %}
+  <p>No departments yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

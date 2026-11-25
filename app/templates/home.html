@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home - NBM Academia{% endblock %}
+
+{% block hero %}
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Welcome to NBM Academia</h1>
+    <p>A fictional university offering programs in science, engineering and the humanities.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="section-head">
+  <h2>Latest announcements</h2>
+  <a href="{{ url_for('announcements') }}">View all &rarr;</a>
+</div>
+
+<div class="grid">
+  {% for a in rows %}
+  <div class="card">
+    <span class="date">{{ a[2].strftime('%d %B %Y') }}</span>
+    <h3>{{ a[0] }}</h3>
+    <p>{{ a[1][:100] }}{% if a[1]|length > 100 %}...{% endif %}</p>
+  </div>
+  {% else %}
+  <p>No announcements yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}
