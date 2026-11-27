@@ -44,7 +44,7 @@ SELECT id, username FROM admins;
 conda create -n univ-app python=3.12
 conda activate univ-app
 pip install -r requirements.txt
-
+### (you can generate the password hash now)
 set DATABASE_URL=postgresql://<user>:<password>@localhost:5432/<database>
 set SECRET_KEY=<random-text>
 python app\app.py
