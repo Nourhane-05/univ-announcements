@@ -6,12 +6,29 @@
 <h2 class="page-title">Announcements</h2>
 <p class="lead">All the latest news from the university.</p>
 
+{% if session.get('admin') %}
+  <p><a class="btn" href="{{ url_for('add_announcement') }}">+ Add announcement</a></p>
+{% endif %}
+
 <div class="list">
   {% for a in rows %}
   <div class="card">
-    <span class="date">{{ a[2].strftime('%d %B %Y') }}</span>
-    <h3>{{ a[0] }}</h3>
-    <p>{{ a[1] }}</p>
+    <span class="date">{{ a[3].strftime('%d %B %Y') }}</span>
+    {% if a[4] %}
+        <span class="date updated">Updated {{ a[4].strftime('%d %B %Y') }}</span>
+    {% endif %}
+    <h3>{{ a[1] }}</h3>
+    <p>{{ a[2] }}</p>
+
+    {% if session.get('admin') %}
+    <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+      <a class="btn" href="{{ url_for('edit_announcement', id=a[0]) }}">Edit</a>
+      <form method="post" action="{{ url_for('delete_announcement', id=a[0]) }}"
+            onsubmit="return confirm('Delete this announcement?');">
+        <button type="submit" class="btn-danger">Delete</button>
+      </form>
+    </div>
+    {% endif %}
   </div>
   {% else %}
   <p>No announcements yet.</p>

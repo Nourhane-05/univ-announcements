@@ -6,7 +6,7 @@
 <section class="hero">
   <div class="hero-inner">
     <h1>Welcome to NBM Academia</h1>
-    <p>A fictional university offering programs in science, engineering and the humanities.</p>
+    <p>Dedicated to academic excellence, scientific discovery, and technological innovation, NBM Academia bridges rigorous theory with real-world application. Across our specialized departments in science, engineering, and the humanities, students collaborate in modern laboratories and dynamic learning environments to become tomorrow’s leaders and researchers.</p>
   </div>
 </section>
 {% endblock %}
@@ -21,6 +21,9 @@
   {% for a in rows %}
   <div class="card">
     <span class="date">{{ a[2].strftime('%d %B %Y') }}</span>
+    {% if a[3] %}
+        <span class="date updated">Updated {{ a[3].strftime('%d %B %Y') }}</span>
+    {% endif %}
     <h3>{{ a[0] }}</h3>
     <p>{{ a[1][:100] }}{% if a[1]|length > 100 %}...{% endif %}</p>
   </div>

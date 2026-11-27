@@ -15,5 +15,6 @@ CREATE TABLE announcements(
    id SERIAL PRIMARY KEY,
    title VARCHAR(200) NOT NULL,
    the_content TEXT NOT NULL,
-   publication_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   publication_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMP DEFAULT NULL
 );

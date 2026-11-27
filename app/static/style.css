@@ -230,6 +230,27 @@ input:focus, textarea:focus {
 
 label { font-weight: 600; color: var(--navy); }
 
+..flash {
+  background: var(--pale);
+  border-left: 4px solid var(--amber);
+  color: var(--navy);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.flash.hide {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.date.updated {
+  background: #fff6dd;
+  color: #8a5a00;
+  margin-left: 0.4rem;
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--navy);
